@@ -1,3 +1,5 @@
+/* - - - - - - - - - - - - Base - - - - - - - - - -  */
+
 body {
   margin: 0;
   padding: 0;
@@ -6,11 +8,85 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #212830;
   font-size: 18px;
+  color: #fff;
+  font-weight: 600;
 }
 
-.logo {
-  height: 70px;
+input{
+  padding: 10px 5px;
+  margin: 8px;
+  color: #000;
+  background: #FFF;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 400px;
+  min-width: 300px;
+  font-size: 1em;
 }
+
+button {
+  padding: 10px 5px;
+  margin: 8px;
+  color: #000;
+  background: #FFF;
+  border-radius: 5px;
+  min-height: 40px;
+  text-align: center;
+  max-width: 400px;
+  min-width: 300px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.mt3{
+  margin-top: 30px;
+}
+
+.mt5{
+  margin-top: 50px;
+}
+
+.container{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast {
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #00ED60;
+  color: #000;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  padding: 12px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* - - - - - - - - - - - - Home - - - - - - - - - -  */
 
 .App {
   height: 100vh;
@@ -25,32 +101,48 @@ body {
   min-height: 50px;
   margin-top: 5vh;
   font-size: 2em;
-  font-weight: 600;
   color: #FFF;
 }
 
 .App-container{
   flex-grow: 1;
+  position: relative;
+}
+
+.App-logo {
+  height: 70px;
+}
+
+/* - - - - - - - - - - - - Game - - - - - - - - - -  */
+
+.Game-form{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.Play-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-button {
-  padding: 10px 5px;
-  margin: 8px;
-  color: #000;
-  background: #FFF;
-  border-radius: 5px;
-  min-height: 40px;
-  text-align: center;
-  max-width: 400px;
-  min-width: 300px;
-  font-size: 1em;
+.Play-header {
+  margin: 10px 0 10px 0;
+  font-size: 1.3em;
 }
 
-button:hover {
+.Play-images {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.Play-images img:hover {
   cursor: pointer;
 }
 
@@ -58,4 +150,13 @@ button:hover {
   .App-header{
     font-size: 1.8em;
   }
+
+  .Play-images {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
