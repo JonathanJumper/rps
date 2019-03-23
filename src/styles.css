@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #212830;
+  font-size: 18px;
+}
+
+.logo {
+  height: 70px;
+}
+
+.App {
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  min-height: 50px;
+  margin-top: 5vh;
+  font-size: 2em;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.App-container{
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px 5px;
+  margin: 8px;
+  color: #000;
+  background: #FFF;
+  border-radius: 5px;
+  min-height: 40px;
+  text-align: center;
+  max-width: 400px;
+  min-width: 300px;
+  font-size: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .App-header{
+    font-size: 1.8em;
+  }
+}

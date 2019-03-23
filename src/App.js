@@ -1,25 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/logo.png';
+
 
 class App extends Component {
+
+  state = {
+    player1: '',
+    player2: '',
+
+  };
+
   render() {
     return (
       <div className="App">
+
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          ¿¡Piedra, Papel o Tijera!?
         </header>
+
+        <div className="App-container">
+          <button>
+            Nuevo Juego
+          </button>
+          <button>
+            Histórico
+          </button>
+        </div>
+
+        <div>
+          <img src={logo} className="logo"/>
+        </div>
+
       </div>
     );
   }
