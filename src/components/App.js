@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import logo from './assets/logo.png';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import logo from '../assets/logo.png';
 
-import Menu from './components/Menu'
-import Game from './components/Game/Game'
-import Toast from './components/Toast';
+import Menu from './Menu'
+import Game from './Game/Game'
+import Toast from './Toast';
 
 export const AppContext = React.createContext();
 
@@ -32,7 +32,9 @@ class App extends Component {
           <div className="App">
 
             <header className="App-header">
-              ¿¡Piedra, Papel o Tijera!?
+              <Link to="/">
+                ¿¡Piedra, Papel o Tijera!?
+              </Link>
             </header>
 
             <div className="App-container">

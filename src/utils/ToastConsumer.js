@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AppContext } from '../App';
+import { AppContext } from '../components/App';
 
 const ToastConsumer = ({ children }) => (
   <AppContext.Consumer>

@@ -46,6 +46,14 @@ button:hover {
   border: 2px solid red;
 }
 
+.ml1 {
+  margin-left: 10px;
+}
+
+.mb3 {
+  margin-bottom: 30px;
+}
+
 .mt3{
   margin-top: 30px;
 }
@@ -84,6 +92,25 @@ button:hover {
 .hidden {
   opacity: 0;
   transition: opacity 0.3s ease-in;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.accent {
+  color: #00DF5F;
+}
+
+.choice {
+  width: 20vw;
+  height: auto;
+  margin: 0 3vw;
 }
 
 /* - - - - - - - - - - - - Home - - - - - - - - - -  */
@@ -146,7 +173,18 @@ button:hover {
   cursor: pointer;
 }
 
+.End-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media only screen and (max-width: 800px) {
+
+  .App {
+    padding: 5px;
+  }
+
   .App-header{
     font-size: 1.8em;
   }
@@ -157,6 +195,20 @@ button:hover {
     flex: 1;
     align-items: center;
     justify-content: center;
+  }
+
+  .choice {
+    width: auto;
+    height: 15vh;
+    margin: 2vh 0;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  body{
+    font-size: 14px;
   }
 
 }

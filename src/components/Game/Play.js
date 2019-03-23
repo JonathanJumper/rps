@@ -66,17 +66,17 @@ class Play extends Component {
       if(turn === 1)
         return(
           <div className="Play-images">
-            <img src={rck_left} alt="rck_left" onClick={this.handlePlayer1Choice(TYPES.ROCK)}/>
-            <img src={pap_left} alt="pap_left" onClick={this.handlePlayer1Choice(TYPES.PAPER)}/>
-            <img src={sci_left} alt="sci_left" onClick={this.handlePlayer1Choice(TYPES.SCISSOR)}/>
+            <img src={rck_left} onClick={this.handlePlayer1Choice(TYPES.ROCK)} className="choice" alt="rck_left" />
+            <img src={pap_left} onClick={this.handlePlayer1Choice(TYPES.PAPER)} className="choice" alt="pap_left" />
+            <img src={sci_left} onClick={this.handlePlayer1Choice(TYPES.SCISSOR)} className="choice"  alt="sci_left"/>
           </div>
         );
       else{
         return(
           <div className="Play-images">
-            <img src={rck_right} alt="rck_right" onClick={this.handlePlayer2Choice(TYPES.ROCK)}/>
-            <img src={pap_right} alt="pap_right" onClick={this.handlePlayer2Choice(TYPES.PAPER)}/>
-            <img src={sci_right} alt="sci_right" onClick={this.handlePlayer2Choice(TYPES.SCISSOR)}/>
+            <img src={rck_right} onClick={this.handlePlayer2Choice(TYPES.ROCK)} className="choice" alt="rck_right" />
+            <img src={pap_right} onClick={this.handlePlayer2Choice(TYPES.PAPER)} className="choice" alt="pap_right" />
+            <img src={sci_right} onClick={this.handlePlayer2Choice(TYPES.SCISSOR)} className="choice" alt="sci_right" />
           </div>
         );
       }
@@ -86,7 +86,7 @@ class Play extends Component {
       <div className="Play-container">
 
         <header className="Play-header">
-          {player1} <span style={{color: '#00DF5F'}}> {player1Wins} -  {player2Wins} </span> {player2}
+          {player1} <span className="accent"> {player1Wins} -  {player2Wins} </span> {player2}
         </header>
         <header className="Play-header">
           Turno de {turn === 1 ? player1 : player2}
