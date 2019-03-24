@@ -1,6 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Game of Drones: Rock, Paper, Scissors
+
+## About
+
+
+This project was made for a challenge from UruIT  .  
+This repo contains the frontend for an application to play Rock, Paper, Scissors as required in instructions
+
+Created with React JS  .
+[ React Router, axios, React Context, HOCs ]
+
+To use it, clone this repo and run
+
+#### `$ npm install`
+#### `$ npm start`
+
+This will launch the app in dev mode at http://localhost:3000/
+
+Make sure you have the backend running for a smoother experience
+You can find it here
+[Backend: Rock, Paper, Scissors](https://github.com/JonathanJumper/rps-api).
+
+To test the application run
+#### `$ npm test`
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
