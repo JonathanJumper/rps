@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from '../assets/logo.png';
 
 import Menu from './Menu'
-import Game from './Game/Game'
+import Game from './Game'
+import Historic from './Historic'
 import Toast from './Toast';
 
 export const AppContext = React.createContext();
@@ -40,11 +41,13 @@ class App extends Component {
             <div className="App-container">
               <Route path="/" exact component={Menu} />
               <Route path="/play" exact component={Game} />
-              <Route path="/historic" exact component={Menu} />
+              <Route path="/historic" exact component={Historic} />
             </div>
 
             <div>
-              <img src={logo} className="App-logo" alt="logo"/>
+              <Link to="/">
+                <img src={logo} className="App-logo" alt="logo"/>
+              </Link>
             </div>
 
             <Toast message={toastMessage} visible={toastVisible} />

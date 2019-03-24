@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
-class Menu extends Component {
+export default function Menu(){
+  return (
+    <div className="container">
 
-  render() {
-    return (
-      <div className="container">
+      <Link to="/play">
+        <button >
+          Nuevo Juego
+        </button>
+      </Link>
 
-        <Link to="/play">
-          <button >
-            Nuevo Juego
-          </button>
-        </Link>
+      <Link to="/historic">
+        <button >
+          Histórico
+        </button>
+      </Link>
 
-        <Link to="/historic">
-          <button >
-            Histórico
-          </button>
-        </Link>
-
-      </div>
-    );
-  }
+    </div>
+  )
 }
-
-export default Menu;

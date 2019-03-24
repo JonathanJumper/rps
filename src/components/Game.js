@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Form from './Form';
-import Play from './Play';
-import End from './End';
-import { withToast } from '../../utils/ToastConsumer';
+import Form from './Game/Form';
+import Play from './Game/Play';
+import End from './Game/End';
+import { withToast } from '../utils/ToastConsumer';
 
 class Game extends Component {
 

@@ -7,7 +7,7 @@ import rck_right from '../../assets/rck_right.png';
 import pap_right from '../../assets/pap_right.png';
 import sci_right from '../../assets/sci_right.png';
 
-import {TYPES} from "../../utils/constants";
+import {TYPES} from "../../utils/CONSTANTS";
 import { withToast } from '../../utils/ToastConsumer';
 
 class Play extends Component {

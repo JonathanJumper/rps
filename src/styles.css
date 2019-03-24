@@ -46,6 +46,14 @@ button:hover {
   border: 2px solid red;
 }
 
+.greyed {
+  opacity: 0.2;
+}
+
+.m0 {
+  margin: 3px;
+}
+
 .ml1 {
   margin-left: 10px;
 }
@@ -127,6 +135,7 @@ a:hover {
 .App-header {
   min-height: 50px;
   margin-top: 5vh;
+  margin-bottom: 15px;
   font-size: 2em;
   color: #FFF;
 }
@@ -178,6 +187,56 @@ a:hover {
   flex-direction: column;
   align-items: center;
 }
+
+/* - - - - - - - - - - - - Historic - - - - - - - - - -  */
+
+.Historic-list{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  margin: 14px 0;
+}
+
+.score {
+  min-width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #FFF;
+  box-sizing: border-box;
+  padding: 10px 5px;
+}
+
+.score-number {
+  float: left;
+  margin-left: 10px;
+}
+
+.score-wins {
+  color: #00ED60;
+  float: right;
+  margin-right: 10px;
+}
+
+.game {
+  min-width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #FFF;
+  box-sizing: border-box;
+  padding: 10px 5px;
+}
+
+.game-player{
+  float: left;
+  margin-left: 10px;
+}
+
+.game-score{
+  color: #00ED60;
+  float: right;
+  margin-right: 10px;
+}
+
 
 @media only screen and (max-width: 800px) {
 
