@@ -59,7 +59,7 @@ class Play extends Component {
 
 
   render() {
-    const {player1, player2, player1Wins, player2Wins} = this.props;
+    const {player1, player2, player1Score, player2Score} = this.props;
     const {turn} = this.state;
 
     const playImages = () => {
@@ -86,7 +86,7 @@ class Play extends Component {
       <div className="Play-container">
 
         <header className="Play-header">
-          {player1} <span className="accent"> {player1Wins} -  {player2Wins} </span> {player2}
+          {player1} <span className="accent"> {player1Score} -  {player2Score} </span> {player2}
         </header>
         <header className="Play-header">
           Turno de {turn === 1 ? player1 : player2}

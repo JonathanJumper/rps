@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from '../assets/logo.png';
 
 import Menu from './Menu'
-import Game from './Game'
+import Game from './Game/Game'
 import Historic from './Historic'
 import Toast from './Toast';
 

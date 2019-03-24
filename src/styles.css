@@ -262,6 +262,10 @@ a:hover {
     margin: 2vh 0;
   }
 
+  .App-logo {
+    height: 50px;
+  }
+
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Form from './Game/Form';
-import Play from './Game/Play';
-import End from './Game/End';
-import { withToast } from '../utils/ToastConsumer';
+import Form from './Form';
+import Play from './Play';
+import End from './End';
+import { withToast } from '../../utils/ToastConsumer';
+import api from "../../api/index";
 
 class Game extends Component {
 
@@ -15,8 +16,8 @@ class Game extends Component {
     player2: '',
 
     // first to get 3
-    player1Wins: 0,
-    player2Wins: 0,
+    player1Score: 0,
+    player2Score: 0,
 
     winner: -1,
 
@@ -29,29 +30,38 @@ class Game extends Component {
   handleRestart = () => {
     this.setState({
       status: 'playing',
-      player1Wins: 0,
-      player2Wins: 0,
+      player1Score: 0,
+      player2Score: 0,
     })
   };
 
+  saveWin = () => {
+    const {player1, player2, player1Score, player2Score} = this.state;
+    api.game.saveGame(player1, player2, player1Score, player2Score)
+      .catch( () => {
+        this.props.context.showToast("Hubo un error al guardar");
+      })
+  };
   checkForWinner = () => {
-    const {player1Wins, player2Wins, player1, player2} = this.state;
-    if( player1Wins === 3 ){
+    const {player1, player2, player1Score, player2Score} = this.state;
+    if( player1Score === 3 ){
       this.props.context.showToast(player1+" gana el juego");
       this.setState({status: 'finishing', winner: 1});
+      this.saveWin();
     }
-    else if ( player2Wins === 3 ){
+    else if ( player2Score === 3 ){
       this.props.context.showToast(player2+" gana el juego");
       this.setState({status: 'finishing', winner: 2});
+      this.saveWin();
     }
   };
 
   handlePlayerWin = winner => {
     if(winner === 1){
-      this.setState({player1Wins: this.state.player1Wins + 1}, this.checkForWinner);
+      this.setState({player1Score: this.state.player1Score + 1}, this.checkForWinner);
     }
     else{
-      this.setState({player2Wins: this.state.player2Wins + 1}, this.checkForWinner);
+      this.setState({player2Score: this.state.player2Score + 1}, this.checkForWinner);
     }
   };
 
@@ -84,16 +94,16 @@ class Game extends Component {
   };
 
   render() {
-    const {status, player1, player2, player1NameError, player2NameError, player1Wins, player2Wins, winner} = this.state;
+    const {status, player1, player2, player1NameError, player2NameError, player1Score, player2Score, winner} = this.state;
     return (
       <div className="container">
         {{
           starting:
             <Form player1={player1} player2={player2} player1Error={player1NameError} player2Error={player2NameError} handleChange={this.handlePlayersNameChange} handleSubmit={this.handlePlayersNameSubmit} />,
           playing:
-            <Play player1={player1} player2={player2} player1Wins={player1Wins} player2Wins={player2Wins} handlePlayerWin={this.handlePlayerWin}/>,
+            <Play player1={player1} player2={player2} player1Score={player1Score} player2Score={player2Score} handlePlayerWin={this.handlePlayerWin}/>,
           finishing:
-            <End player1={player1} player2={player2} player1Wins={player1Wins} player2Wins={player2Wins} winner={winner} onRestart={this.handleRestart}/>
+            <End player1={player1} player2={player2} player1Score={player1Score} player2Score={player2Score} winner={winner} onRestart={this.handleRestart}/>
         }[status]}
       </div>
     );

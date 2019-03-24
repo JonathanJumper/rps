@@ -14,4 +14,18 @@ function getScores () {
   });
 }
 
-export default {getGames, getScores};
+function saveGame (player1, player2, player1Score, player2Score) {
+  return requestWrapper({
+    url:    '/games',
+    method: 'POST',
+    data: {
+      player1,
+      player2,
+      player1Score,
+      player2Score
+    }
+  });
+
+};
+
+export default {getGames, getScores, saveGame};

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from "../api";
+import {withToast} from "../utils/ToastConsumer";
 
 class Historic extends Component {
 
@@ -24,7 +25,10 @@ class Historic extends Component {
         this.setState({
           scores: response.data.scores
         })
-      });
+      })
+      .catch( () => {
+        this.props.context.showToast("Error en conexión con backend :(");
+      })
   };
 
   updateGames = () => {
@@ -34,7 +38,10 @@ class Historic extends Component {
         this.setState({
           games: response.data.games
         })
-      });
+      })
+      .catch( () => {
+        this.props.context.showToast("Error en conexión con backend :(");
+      })
   };
 
   handleScoresClick = () => {
@@ -89,4 +96,4 @@ class Historic extends Component {
   }
 }
 
-export default Historic;
+export default withToast(Historic);
